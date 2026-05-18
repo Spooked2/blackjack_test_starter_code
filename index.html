@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/dom_blackjack.js"></script>
+</head>
+<body>
+
+<main>
+
+    <div id="winTracker">
+
+        <div id="dealerWinContainer" class="winContainer">
+
+            <p>Dealer wins</p>
+            <p id="dealerWinLabel">-</p>
+
+        </div>
+
+        <div id="playerWinContainer" class="winContainer">
+
+            <p>Player Wins</p>
+            <p id="playerWinLabel">-</p>
+
+        </div>
+
+    </div>
+
+    <section id="dealerContainer" class="mainContainer">
+
+        <p id="dealerTitle">Dealer</p>
+        <p id="dealerTotal">-</p>
+
+        <div id="dealerCardContainer" class="cardContainer"></div>
+
+    </section>
+
+    <section id="playerContainer" class="mainContainer">
+
+        <div id="playerCardContainer" class="cardContainer"></div>
+
+        <p id="playerTotal">-</p>
+        <p id="playerTitle">Player</p>
+
+    </section>
+
+    <section id="buttonContainer">
+
+        <button id="newGameButton">New game</button>
+        <button id="hitButton">Hit</button>
+        <button id="standButton">Stand</button>
+
+    </section>
+
+</main>
+
+</body>
+</html>
