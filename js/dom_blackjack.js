@@ -65,7 +65,7 @@ function init() {
 
 function onNewGameButtonPressed(e) {
     e.preventDefault();
-    
+
     // Remove all cards currently on the page
     clearAllHTMLCards();
 
@@ -91,7 +91,7 @@ function onNewGameButtonPressed(e) {
     // Add them to the dealer's hand
 
     // Get the total of the dealer's hand
-    const dealerTotal = getHandTotal(dealerHand)
+    const dealerTotal = getHandTotal(dealerHand);
 
     // Update the dealer's total on the HTML page
     setLabel(dealerTotalLabel, dealerTotal);
@@ -105,7 +105,7 @@ function onNewGameButtonPressed(e) {
     // Add them to the player's hand
 
     // Get the total of the player's hand
-    const playerTotal = getHandTotal(playerHand)
+    const playerTotal = getHandTotal(playerHand);
 
     // Update the player's total on the HTML page
     setLabel(playerTotalLabel, playerTotal);
@@ -155,6 +155,7 @@ function dealerTurn() {
         // If the dealer's total is below 17, always draw
         // If the dealer's total is at exactly 17, there's a 50% chance he draws or stays
         // (use the break keyword to stop the while loop)
+        // Make sure to update the dealer's total
         break
 
     }
@@ -174,7 +175,7 @@ function gameOver() {
     // Add a win to the player or dealer
 
     // Update the total wins on the HTML page
-    // setLabel(playerWinLabel, ?);
+    //setLabel(playerWinLabel, ?);
     // setLabel(dealerWinLabel, ?);
 
     // Disable the hit and stand buttons, just in case
@@ -200,6 +201,17 @@ function resetDeck() {
 
 function shuffleDeck() {
 
+    for (let i = deck.length - 1; i >= 0; i--) {
+
+        let randomIndex = Math.floor(Math.random() * deck.length);
+
+        let currentCard = deck[i];
+        let randomCard = deck[randomIndex];
+
+        deck[randomIndex] = currentCard;
+        deck[i] = randomCard;
+
+    }
 }
 
 function getHandTotal(hand) {
